@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <title>Iniciar Sesión</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleiniciar.css'%}">
+</head>
+<body>
+    <div class ="modal-dialog text-center">
+        <div class="col-sin-8 main-section" >
+            <div class="modal-content">
+                <h1>
+                    Inicio de sesión
+                </h1>
+                <form class="col-12">
+                    <div class="form-group" id="usuario">
+                        <input type="text" class="form-control" placeholder="Usuario">
+                    </div>
+                    
+                    <div class="form-group" id="contrasena">
+                        <input type="text" class="form-control" placeholder="Contraseña">
+                    </div>
+                    <div>
+                       <!-- <button type="submit" class="btn btn-outline-dark" href="{% url 'inicioAdministrador' %}">Ingresar</button> -->
+                       <!--<a href="{% url 'inicioAdministrador' %}"><input type="button" class="btn btn-outline-dark" value="Ingresar"></a>-->
+
+                       <a href="{% url 'inicioAdministrador' %}"><input type="button" class="btn btn-outline-dark "  value="Ingresar"></a>
+                       <a href="{% url 'InicioUsuario' %}"><input type="button" class="btn btn-outline-dark" value="Cancelar"></a>
+                    </div>
+                </form>    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

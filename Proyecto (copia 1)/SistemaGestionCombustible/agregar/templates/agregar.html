@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static%}
+    <title>Agregar Combustible</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleagregar.css'%}">
+</head>
+<body>
+    <h1 class="text-center">
+        Agregar Combustible
+    </h1>
+    <div class="seccion">
+        <div class="contenido">
+            <h2 class="subtitulo text-center">
+                Estación de Servicio
+            </h2>
+            <div class="grupo">
+                <label>Estación:</label>
+                <input type="text" size="10" class="form-control" placeholder="Nombre Estación">
+            </div>
+            <div class="grupo">
+                <label>Fecha:</label>
+            </div>
+            <div class="grupo">
+                <input id="fecha" class="form-control" type="date">
+            </div>
+            <div class="grupo">
+                <label>Departamento:</label>
+            </div>
+            <div class="grupo">
+                <input type="list" size="15" class="form-control" list="Departamento">
+                <datalist id="departamento">
+                </datalist>
+            </div>
+            <div class="grupo">
+                <label>Municipio:</label>
+            </div>
+            <div class="grupo">
+                <input type="list" size="15" class="form-control" list="Municipio">
+                <datalist id="municipio">
+                </datalist>
+            </div>
+            <div class="grupo">
+                <label>Tipo de Servicio:</label>
+            </div>
+            <div class="grupo">
+                <input type="list" size="15" class="form-control" list="Servicio">
+                <datalist id="servicio">
+                </datalist>
+            </div>
+            <div class="grupo">
+                <label>Tipo de combustible:</label>
+            </div>
+            <div class="grupo">
+                <input type="list" size="15" class="form-control" list="Combustible">
+                <datalist id="combustible">
+                </datalist>
+            </div>
+        </br>
+        </div>        
+        <div class="contenido">
+            <h2 class="subtitulo text-center">
+                Combustible
+            </h2>
+            <div class="grupo">
+                <label>Precio de referencia:</label>
+                <input type="text" size="23" class="form-control" placeholder="Ingrese precio">
+            </div> 
+            <div class="grupo">
+                <label>Precio del combustible:</label>
+                <input type="text" size="23" class="form-control" placeholder="Ingrese precio">
+                <label for="nombreCP">Calcular Precio de Referencia:</label>
+            </div>
+            <div class="text-center">
+               <!-- <button type="submit" class="btn btn-outline-dark">Calcular</button> -->
+               <a href="{% url 'Calcular' %}"><input type="button" class="btn btn-outline-dark"  value="Calcular"></a>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div calss="seccion">
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-light">Agregar</button>
+            &nbsp;
+           <!-- <button type="submit" class="btn btn-outline-light">Cancelar</button>-->
+           <a href="{% url 'inicioAdministrador' %}"><input type="button" class="btn btn-outline-light"  value="Cancelar"></a>
+        </div>
+    </div>
+</body>
+</html>

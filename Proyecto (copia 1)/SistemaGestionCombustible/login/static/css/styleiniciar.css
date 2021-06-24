@@ -1,0 +1,36 @@
+body{
+    background-color: #b17c54;
+}
+
+h1{
+    color: #2e1a06;
+    font-size: 35px;
+    margin: 25px   0px   25px;
+}
+
+.main-section{
+    margin: 0 auto;
+    margin-top: 25%;
+    padding: 0;
+}
+
+.modal-content{
+    background-color: #F9e4b7;
+    opacity: .90;
+    padding: 0 28px;
+    border-color: #2e1a06;
+    height: 275px;
+}
+
+.form-group input{
+    height: 35px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: #2e1a06;
+}
+
+button{
+    width: 25%;
+    margin: 5px 5px 25px;
+}
+
