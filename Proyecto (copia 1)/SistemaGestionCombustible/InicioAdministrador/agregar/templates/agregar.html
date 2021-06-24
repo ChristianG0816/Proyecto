@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static%}
+    <title>Agregar Combustible</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleagregar.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            var $select1=$('#sDepartamento'),
+                $select2=$('#sMunicipio'),
+                $options=$select2.find('option');
+                $select1.on('change',function(){
+                    $select2.html($options.filter('[value="'+this.value+'"]'));
+                }).trigger('change');
+        });
+    </script>
+</head>
+<body>
+    <form method="POST">{% csrf_token %}
+        <h1 class="text-center">
+            Agregar Combustible
+        </h1>
+        <div class="seccion">
+            <div class="contenido">
+                <h2 class="text-center">
+                    Estación de Servicio
+                </h2>
+                <div>
+                    <!--Estacion-->
+                    <label for="{{estacion.nombree.label}}">{{estacion.nombree.label}}:</label>
+                    {{estacion.nombree}}
+                </div>
+                    <!--Fecha-->
+                <div>
+                    <label for="{{registro.fecharegistro.label}}">{{registro.fecharegistro.label}}:</label>
+                    {{registro.fecharegistro}}
+                </div>
+                <!--Municipio-->
+                <div>
+                    <label>Municipio:</label>
+                    <select id="sMunicipio" class="form-control">
+                        {% for municipios in municipio%}
+                        <option value="{{municipios.iddepartamento}}">{{municipios.nombrem}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <!--Tipo de servicio-->
+                <div>
+                    <label for="{{registro.idservicio.label}}">{{registro.idservicio.label}}:</label>
+                    {{registro.idservicio}}
+                </div>
+            </br>
+            </div>        
+            <div class="contenido">
+                <h2 class="subtitulo text-center">
+                    Combustible
+                </h2>
+                <!--Tipo de combustible-->
+                <div>
+                    <label for="{{registro.idcombustible.label}}">{{registro.idcombustible.label}}:</label>
+                    {{registro.idcombustible}}
+                </div>
+                <!--Precio de combustible-->
+                <div>
+                    <label for="{{registro.preciocombustible.label}}">{{registro.preciocombustible.label}}:</label>
+                    {{registro.preciocombustible}}
+                </div>
+                <!--Precio de referencia-->
+                <div>
+                    <label for="{{registro.precioreferencia.label}}">{{registro.precioreferencia.label}}:</label>
+                    {{registro.precioreferencia}}
+                </div>
+                </br>
+                <div>
+                    <label for="nombreCP">Calcular Precio de Referencia:</label>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-dark">Calcular</button>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="seccion">
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-light">Agregar</button>
+                &nbsp;
+                <button type="button" class="btn btn-outline-light">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
