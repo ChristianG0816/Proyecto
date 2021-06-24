@@ -1,0 +1,67 @@
+body{
+    background-color: #b17c54;
+    margin: 10px 10px auto;
+    margin-top: 4%;
+    padding: 0;
+}
+
+h1{
+    color: #ffff;
+    font-size: 35px;
+    margin: 1% 0px 1%;
+}
+
+h2{
+    color: #2e1a06;
+    font-size: 25px;
+    margin: 5%   0px   1%;
+    
+}
+
+.seccion{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    
+}
+.contenido{
+    border-radius: 5px;
+    background-color: #F9e4b7;
+    border-color: #2e1a06;
+    opacity: .90;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 30px 5px 30px;
+}
+.grupo label{
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.form-control{
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+    border-color: #2e1a06;
+    padding: 20px;
+   
+}
+.grupo input{
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+    border-color: #2e1a06;
+    padding : 0px 5px 0px 5px;
+    
+    
+}
+
+.grupo datalist{
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+    border-color: #2e1a06;  
+    
+    
+}
+
